@@ -46,7 +46,7 @@ namespace ConnectedPractise_pr
 //CREATE TABLE [dbo].[Sale]
 //(
 //	[Id] INT IDENTITY NOT NULL PRIMARY KEY,
-//	[ProductId] INT NOT NULL REFERENCES [dbo].[Product]([Id]),
+//	[ProductId] INT NOT NULL REFERENCES [dbo].[Products]([Id]),
 //	[ManagerId] INT NOT NULL REFERENCES [dbo].[Manager]([Id]),
 //	[Quantity] INT NOT NULL CHECK ([Quantity] > 0),
 //	[SaleDate] DATETIME NOT NULL DEFAULT GETDATE(),

@@ -18,9 +18,9 @@ namespace ConnectedPractise_pr
                     " 1. Під'єднатись до БД\n" +
                     " 2. Від'єднатись від БД\n" +
                     " 3. Показати\n" +
-                    //" 4. Вставити\n" +
-                    //" 5. Оновити\n" +
-                    //" 6. Видалити\n" +
+                    " 4. Вставити\n" +
+                    " 5. Оновити\n" +
+                    " 6. Видалити\n" +
                     " > ");
                 byte choice = byte.TryParse(Console.ReadLine(), out byte result) ? result : (byte)0;
                 Console.Clear();
@@ -43,36 +43,36 @@ namespace ConnectedPractise_pr
                         Console.Clear();
                     }
                 }
-                //else if (choice == 4)
-                //{
-                //    if (IsConnected()) InsertMenu();
-                //    else
-                //    {
-                //        Console.WriteLine("Спочатку підключіться");
-                //        Console.ReadKey();
-                //        Console.Clear();
-                //    }
-                //}
-                //else if (choice == 5)
-                //{
-                //    if (IsConnected()) UpdateMenu();
-                //    else
-                //    {
-                //        Console.WriteLine("Спочатку підключіться");
-                //        Console.ReadKey();
-                //        Console.Clear();
-                //    }
-                //}
-                //else if (choice == 6)
-                //{
-                //    if (IsConnected()) DeleteMenu();
-                //    else
-                //    {
-                //        Console.WriteLine("Спочатку підключіться");
-                //        Console.ReadKey();
-                //        Console.Clear();
-                //    }
-                //}
+                else if (choice == 4)
+                {
+                    if (IsConnected()) InsertMenu();
+                    else
+                    {
+                        Console.WriteLine("Спочатку підключіться");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                }
+                else if (choice == 5)
+                {
+                    if (IsConnected()) UpdateMenu();
+                    else
+                    {
+                        Console.WriteLine("Спочатку підключіться");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                }
+                else if (choice == 6)
+                {
+                    if (IsConnected()) DeleteMenu();
+                    else
+                    {
+                        Console.WriteLine("Спочатку підключіться");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                }
                 else if (choice == 0)
                 {
                     break;
@@ -99,6 +99,14 @@ namespace ConnectedPractise_pr
                     " 10. Показати канцтовари, які закупила певна фірма-покупець\n" +
                     " 11. Показати інформацію про нещодавній продаж\n" +
                     " 12. Показати середню кількість товарів по кожному типу канцтоварів\n" +
+                    " 13. Показати інформацію про менеджера з найбільшою кількістю продажів за кількістю одиниць\n" +
+                    " 14. Показати інформацію про менеджера з продажу з найбільшою загальною сумою прибутку\n" +
+                    " 15. Показати інформацію про менеджера з продажу з найбільшою загальною сумою прибутку за вказаний проміжок часу\n" +
+                    " 16. Показати інформацію про фірму-покупця, яка зробила закупку на найбільшу суму\n" +
+                    " 17. Показати інформацію про тип канцтоварів з найбільшою кількістю одиниць продажів\n" +
+                    " 18. Показати інформацію про тип найприбутковіших канцтоварів\n" +
+                    " 19. Показати назву найпопулярніших канцтоварів за кількістю проданих одиниць\n" +
+                    " 20. Показати назву канцтоварів, які не продавалися у задану кількість днів\n" +
                     " > ");
                 byte choice = byte.TryParse(Console.ReadLine(), out byte result) ? result : (byte)0;
                 Console.Clear();
@@ -108,73 +116,73 @@ namespace ConnectedPractise_pr
             }
         }
 
-        //private static void InsertMenu()
-        //{
-        //    while (true)
-        //    {
-        //        Console.Write(
-        //            "====== INSERT MENU ======\n" +
-        //            " 0. Назад\n" +
-        //            " 1. Вставити новий товар\n" +
-        //            " 2. Вставити новий тип товару\n" +
-        //            " 3. Вставити нового постачальника\n" +
-        //            " > ");
-        //        byte choice = byte.TryParse(Console.ReadLine(), out byte result) ? result : (byte)0;
-        //        Console.Clear();
+        private static void InsertMenu()
+        {
+            while (true)
+            {
+                Console.Write(
+                    "====== INSERT MENU ======\n" +
+                    " 0. Назад\n" +
+                    " 1. Вставити новий канцтовар\n" +
+                    " 2. Вставити новий тип канцтовару\n" +
+                    " 3. Вставити нового менеджера\n" +
+                    " > ");
+                byte choice = byte.TryParse(Console.ReadLine(), out byte result) ? result : (byte)0;
+                Console.Clear();
 
-        //        if (choice == 0) break;
-        //        else DatabaseOperations.ExecuteInsertCommand(choice);
-        //    }
-        //}
+                if (choice == 0) break;
+                else DatabaseOperations.ExecuteInsertCommand(choice);
+            }
+        }
 
-        //private static void UpdateMenu()
-        //{
-        //    while (true)
-        //    {
-        //        Console.Write(
-        //            "====== UPDATE MENU ======\n" +
-        //            " 0. Назад\n" +
-        //            " 1. Оновити інформацію про товар\n" +
-        //            " 2. Оновити інформацію про тип товару\n" +
-        //            " 3. Оновити інформацію про постачальника\n" +
-        //            " > ");
-        //        byte choice = byte.TryParse(Console.ReadLine(), out byte result) ? result : (byte)0;
-        //        Console.Clear();
+        private static void UpdateMenu()
+        {
+            while (true)
+            {
+                Console.Write(
+                    "====== UPDATE MENU ======\n" +
+                    " 0. Назад\n" +
+                    " 1. Оновити інформацію про канцтовар\n" +
+                    " 2. Оновити інформацію про тип канцтовару\n" +
+                    " 3. Оновити інформацію про менеджера\n" +
+                    " > ");
+                byte choice = byte.TryParse(Console.ReadLine(), out byte result) ? result : (byte)0;
+                Console.Clear();
 
-        //        if (choice == 0)
-        //        {
-        //            break;
-        //        }
-        //        else
-        //        {
-        //            DatabaseOperations.ExecuteUpdateCommand(choice);
-        //        }
-        //    }
-        //}
+                if (choice == 0)
+                {
+                    break;
+                }
+                else
+                {
+                    DatabaseOperations.ExecuteUpdateCommand(choice);
+                }
+            }
+        }
 
-        //private static void DeleteMenu()
-        //{
-        //    while (true)
-        //    {
-        //        Console.Write(
-        //            "====== DELETE MENU ======\n" +
-        //            " 0. Назад\n" +
-        //            " 1. Видалити товар\n" +
-        //            " 2. Видалити тип товару\n" +
-        //            " 3. Видалити постачальника\n" +
-        //            " > ");
-        //        byte choice = byte.TryParse(Console.ReadLine(), out byte result) ? result : (byte)0;
-        //        Console.Clear();
+        private static void DeleteMenu()
+        {
+            while (true)
+            {
+                Console.Write(
+                    "====== DELETE MENU ======\n" +
+                    " 0. Назад\n" +
+                    " 1. Видалити канцтовар\n" +
+                    " 2. Видалити тип канцтовару\n" +
+                    " 3. Видалити менеджера\n" +
+                    " > ");
+                byte choice = byte.TryParse(Console.ReadLine(), out byte result) ? result : (byte)0;
+                Console.Clear();
 
-        //        if (choice == 0)
-        //        {
-        //            break;
-        //        }
-        //        else
-        //        {
-        //            DatabaseOperations.ExecuteDeleteCommand(choice);
-        //        }
-        //    }
-        //}
+                if (choice == 0)
+                {
+                    break;
+                }
+                else
+                {
+                    DatabaseOperations.ExecuteDeleteCommand(choice);
+                }
+            }
+        }
     }
 }
